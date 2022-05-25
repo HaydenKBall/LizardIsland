@@ -9,8 +9,13 @@ namespace LizardIsland.Providers
             Console.Write("\nName: ");
 
             Player newPlayer = new Player();
+
             newPlayer.Name = Console.ReadLine();
 
+            if (newPlayer.Name == "")
+            {
+                newPlayer.Name = "Hero";
+            }
             return newPlayer;
         }
         public Enemy.Common GetRanEnemy()

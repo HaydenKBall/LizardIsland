@@ -48,7 +48,7 @@
         public static void Shipwreck(string name)
         {
             //CHARACTER NAME
-            if (string.IsNullOrEmpty(name))
+            if (name == "Hero")
             {
                 Console.WriteLine("\n...I can't even remember my own name...? Who am I?");
                 Console.ReadKey();
@@ -140,7 +140,7 @@
             Console.ReadKey();
             Console.WriteLine("\nYou need to find shelter soon. 'This path must lead to some kind of town....' you think to yourself.");
             Console.ReadKey();
-            Console.WriteLine("\nYour pace quickens and you follow the trail deeper into the forrest.");
+            Console.WriteLine("\nYour pace quickens and you follow the trail deeper into the jungle.");
             Console.ReadKey();
             Console.WriteLine("\nThe trail winds to the right...");
             Console.ReadKey();
@@ -152,6 +152,63 @@
             Console.ReadKey();
             Console.WriteLine("\nGet ready to fight!");
             Console.ReadKey();
+        }
+
+        public static void JungleMain()
+        {
+            Console.Clear();
+            Console.WriteLine("===============================");
+            Console.WriteLine("     JUNGLE, LIZARD ISLAND     ");
+            Console.WriteLine("===============================");
+            Console.ReadKey();
+            Console.WriteLine("\nYou stand over your two victims and wipe the blood from your sabre.");
+            Console.ReadKey();
+            Console.WriteLine("\nIt appears as if these jungles are more dangerous than originally thought...");
+            Console.ReadKey();
+            Console.WriteLine("\nNo time to linger and reflect on the dead. Time to carry on.");
+            Console.ReadKey();
+            Console.WriteLine("\nYou continue along the path on high alert...");
+            Console.ReadKey();
+            Console.WriteLine(".");
+            Console.ReadKey();
+            Console.WriteLine("..");
+            Console.ReadKey();
+            Console.WriteLine("...");
+            Console.ReadKey();
+            Console.WriteLine("Hours pass...");
+            Console.ReadKey();
+            Console.WriteLine("...");
+            Console.ReadKey();
+            Console.WriteLine("..");
+            Console.ReadKey();
+            Console.WriteLine(".");
+            Console.ReadKey();
+            Console.WriteLine("Just as one might begin to entertain thoughts of doubt, smoke enters your bruised nostrils. You smell a campfire.");
+            Console.WriteLine("Your dry nostrils sting as the smoke fills them. In pain, you instinctively wipe your nose. You realize its covered in dry blood.");
+            Console.ReadKey();
+            Console.WriteLine("\nThe path before you leads to a clearing in the dense jungle, a circular grassy area.");
+            Console.WriteLine("In the middle of the clearing remains the glow of waning fire. Someone had been here recently.");
+            Console.ReadKey();
+            Console.WriteLine("\nOn one end of the clearing was a wrecked caravan, its wooden walls were cracked and its canvas top torn.");
+            Console.WriteLine("Someone had been attacked and looted recently?");
+            Console.ReadKey();
+            Console.WriteLine("\n CRACK!!");
+            Console.ReadKey();
+            Console.WriteLine("\nLike a gunshot in the night, you hear the unmistakable sound of a twig snapping in the woods.");
+            Console.WriteLine("The sound came from the woods opposite of the broken caravan. You were not alone.");
+            Console.ReadKey();
+            Console.WriteLine("\nYou call out to the woods... 'SHOW YOURSELF!.'");
+            Console.WriteLine("...the woods do not respond.");
+            Console.ReadKey();
+            Console.WriteLine("\nWhomever was nearby must have run away...");
+            Console.WriteLine("The wreckage of this encampment was not done by one man, and a group of men would certainly see you as an empty target.");
+            Console.WriteLine("Perhaps it was a victim of the attack... scared I was another opportunist looking for loot.");
+            Console.ReadKey();
+            Console.WriteLine("\nRegardless... you are alone now.");
+            Console.ReadKey();
+            Console.WriteLine("\nYou rip the rest of the cotton canvas off the roof of the tattered caravan. You figure it will come in handy as a blanket.");
+            Console.ReadKey();
+            Console.WriteLine("\nYou walk 5 minutes off the trail into the woods so as to not be discovered easily in the night... You lay your head down and sleep.");
         }
     }
 }

@@ -12,7 +12,7 @@
             PotionsBought = 0;
             Money = 0;
         }
-        public string Name { get; set; }
+        public string? Name { get; set; }
         public int Health { get; set; }
         public int WeaponPower { get; set; }
         public int Armor { get; set; }

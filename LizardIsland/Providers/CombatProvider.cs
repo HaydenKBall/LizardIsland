@@ -47,10 +47,23 @@ namespace LizardIsland.Providers
                 
                 var inputAction = Console.ReadLine().ToLower();
                 PlayerAction(inputAction);
+
+                if (_player.Health <= 0)
+                {
+                    Console.Clear();
+                    Console.WriteLine("======================================================================");
+                    Console.WriteLine("");
+                    Console.WriteLine("                           YOU ARE DEAD.                              ");
+                    Console.WriteLine("       Press enter to exit application. Re-launch to try again.       ");
+                    Console.WriteLine("");
+                    Console.WriteLine("======================================================================");
+                    Console.ReadKey();
+                    Environment.Exit(0);
+                }
             }
             _player.Money += _enemy.Loot;
-            Console.WriteLine("ENEMY SLAIN. You search it's corpse and find " + _enemy.Loot + " Lizard Tails.");
-            Console.ReadKey();            
+            Console.WriteLine("\nENEMY SLAIN. You search it's corpse and find " + _enemy.Loot + " Lizard Tails.");
+            Console.ReadKey();       
         }
 
         private void PlayerAction(string action)

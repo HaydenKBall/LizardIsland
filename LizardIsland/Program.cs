@@ -31,6 +31,8 @@ namespace LizardIsland
             var newEnemyTwo = CharacterProvider.GetRanEnemy();
             var combatProviderThree = new CombatProvider(player, newEnemyTwo);
             combatProviderThree.Combat();
+
+            StoryExtension.JungleMain();
             
         } 
     }
