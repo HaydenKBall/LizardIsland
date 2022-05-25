@@ -6,19 +6,15 @@ namespace LizardIsland.Providers
     {
         public static void RunStore(Player player)
         {
-            int potionPrice;
-            int armorPrice;
-            int weaponPrice;
-            int goldenPrice;
-
             while (true)
             {
-                potionPrice = 5 * (player.PotionsBought + 1);
-                armorPrice = 25 * (player.Armor + 1);
-                weaponPrice = 50 * (player.WeaponPower + 1);
-                goldenPrice = 70;
+                var potionPrice = 5 * (player.PotionsBought + 1);
+                var armorPrice = 25 * (player.Armor + 1);
+                var weaponPrice = 50 * (player.WeaponPower + 1);
+                const int goldenPrice = 70;
 
                 Console.Clear();
+
                 Console.WriteLine("+============================================+");
                 Console.WriteLine("| MARIE BOUDREAUX's LIZARD ISLAND BOUTIQUE   |");
                 Console.WriteLine("+============================================+");
@@ -29,10 +25,13 @@ namespace LizardIsland.Providers
                 Console.WriteLine(" (E)xit Shop                         ");
                 Console.WriteLine("+============================================+");
                 Console.WriteLine("      'Got any lizard tails for me?' ");
+
                 Console.WriteLine("");
                 Console.WriteLine("");
                 Console.WriteLine("");
+
                 Console.WriteLine(player.Name + "'s Stats");
+
                 Console.WriteLine("+============================================+");
                 Console.WriteLine("Health: " + player.Health);
                 Console.WriteLine("Weapon Power: " + player.WeaponPower);
@@ -41,56 +40,68 @@ namespace LizardIsland.Providers
                 Console.WriteLine("Lizard Tails: " + player.Money);
                 Console.WriteLine("+============================================+");
 
-                Console.Write("\nInput key corrosponding to desired purchase: ");
-                string input = Console.ReadLine();
-                input = input.ToLower();
+                Console.Write("\nInput key corresponding to desired purchase: ");
 
-                if (input == "s" || input == "sabre")
+                string input = Console.ReadLine();
+
+                if (!string.IsNullOrEmpty(input))
                 {
-                    TryBuy("sabre", weaponPrice, player);
+                    input = input.ToLower();
+
+                    if (input is "s" or "sabre")
+                    {
+                        TryBuy("sabre", weaponPrice, player);
+                    }
+                    else if (input is "b" or "buckler")
+                    {
+                        TryBuy("buckler", armorPrice, player);
+                    }
+                    else if (input is "p" or "potion")
+                    {
+                        TryBuy("potion", potionPrice, player);
+                    }
+                    else if (input is "g" or "golden")
+                    {
+                        TryBuy("golden", goldenPrice, player);
+                    }
+                    else if (input is "e" or "exit")
+                    {
+                        break;
+                    }
                 }
-                else if (input == "b" || input == "buckler")
+                else
                 {
-                    TryBuy("buckler", armorPrice, player);
-                }
-                else if (input == "p" || input == "potion")
-                {
-                    TryBuy("potion", potionPrice, player);
-                }
-                else if (input == "g" || input == "golden")
-                {
-                    TryBuy("golden", goldenPrice, player);
-                }
-                else if (input == "e" || input == "exit")
-                {
-                    Console.Clear();
-                    break;
+                    RunStore(player);
                 }
             }
 
         }
-        static void TryBuy(string item, int cost, Player player)
+
+        private static void TryBuy(string item, int cost, Player player)
         {
             if (player.Money >= cost)
             {
-                if (item == "sabre")
+                switch (item)
                 {
-                    player.WeaponPower++;
+                    case "sabre":
+                        player.WeaponPower++;
+                        break;
+
+                    case "buckler":
+                        player.Armor++;
+                        break;
+
+                    case "potion":
+                        player.PotionQty++;
+                        player.PotionsBought++;
+                        break;
+
+                    case "golden":
+                        player.WeaponPower++;
+                        player.Armor++;
+                        break;
                 }
-                else if (item == "buckler")
-                {
-                    player.Armor++;
-                }
-                else if (item == "potion")
-                {
-                    player.PotionQty++;
-                    player.PotionsBought++;
-                }
-                else if (item == "golden")
-                {
-                    player.WeaponPower++;
-                    player.Armor++;
-                }
+
                 player.Money -= cost;
             }
             else

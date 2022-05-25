@@ -9,17 +9,17 @@ namespace LizardIsland.Data
         public int WeaponPower { get; set; }
         public int Loot { get; set; }
 
-        public class Common: Enemy
+        public class Common : Enemy
         {
             public Common()
             {
-                Name = GetName();
+                Name = GetRandomName();
                 Health = RngExtension.RandomNumber(8, 12);
                 WeaponPower = RngExtension.RandomNumber(1, 6);
                 Loot = RngExtension.RandomNumber(4, 11);
             }
 
-            public string GetName()
+            public string GetRandomName()
             {
                 switch (RngExtension.RandomNumber(0, 10))
                 {
@@ -43,14 +43,16 @@ namespace LizardIsland.Data
                         return "Cursed Voodoo Doll";
                     case 9:
                         return "Water Zombie";
+                    default:
+                        return "Monster";
                 }
-                return "Monster";
             }
         }
 
-        public class Boss: Enemy
-        {
+        // TODO: Find use for harder enemies
+        //public class Boss: Enemy
+        //{
 
-        }
+        //}
     }   
 }

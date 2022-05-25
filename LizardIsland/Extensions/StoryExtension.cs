@@ -107,13 +107,13 @@
             Console.WriteLine("\nYou ready your sword for battle");
         }
 
-        public static void EndBeach(int money)
+        public static void EndBeach(int loot)
         {
             //END OF BEACH
             Console.Clear();
             Console.WriteLine("You stand over the dead Imperial Sailor and use his shirt to wipe the blood off your sabre.");
             Console.ReadKey();
-            Console.WriteLine("\nYou search his pockets and find " + money + " Lizard Tails.");
+            Console.WriteLine("\nYou search his pockets and find " + loot + " Lizard Tails.");
             Console.ReadKey();
             Console.WriteLine("\n'These must be used as currency on this Island' you think to yourself...'that means there must be a town nearby!'");
             Console.ReadKey();

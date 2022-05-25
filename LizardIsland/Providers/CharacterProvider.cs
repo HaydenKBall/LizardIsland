@@ -4,26 +4,30 @@ namespace LizardIsland.Providers
 {
     public class CharacterProvider
     {
-        public Player GetNewPlayer()
+        public Player CreateNewPlayer()
         {
             Console.Write("\nName: ");
 
             Player newPlayer = new Player();
 
-            newPlayer.Name = Console.ReadLine();
+            var inputName = Console.ReadLine();
 
-            if (newPlayer.Name == "")
+            if (!string.IsNullOrEmpty(inputName))
             {
-                newPlayer.Name = "Hero";
+                newPlayer.Name = inputName;
             }
+
             return newPlayer;
         }
-        public Enemy.Common GetRanEnemy()
+
+        public Enemy.Common CreateRandEnemy()
         {
-            Enemy.Common ranEnemy = new Enemy.Common();
-            return ranEnemy;
+            Enemy.Common randEnemy = new Enemy.Common();
+
+            return randEnemy;
         }
-        public Enemy GetBoss(string name, int health, int weaponPower, int loot)
+
+        public Enemy CreateBoss(string name, int health, int weaponPower, int loot)
         {
             Enemy boss = new Enemy
             {
@@ -32,6 +36,7 @@ namespace LizardIsland.Providers
                 Health = health,
                 Loot = loot
             };
+
             return boss;
         }
     }
